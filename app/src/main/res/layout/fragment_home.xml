@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    tools:context=".HomeFragment">
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shape_buttons"
+        android:textColor="#86A699"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:text="Add a Task" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_buttons"
+        android:textColor="#86A699"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:text="View Tasks" />
+</LinearLayout>
