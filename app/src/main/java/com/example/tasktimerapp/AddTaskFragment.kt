@@ -1,33 +1,50 @@
 package com.example.tasktimerapp
 
 import android.os.Bundle
+import android.util.EventLogTags
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 
 class AddTaskFragment : Fragment() {
-    lateinit var etName: EditText
+    private val TaskModel by lazy { ViewModelProvider(this).get( TaskViewModel ::class.java) }
+
+    lateinit var etTask: EditText
     lateinit var etDescription: EditText
     lateinit var btnSave: Button
+    lateinit var btnback: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_task, container, false)
-        etName.findViewById<EditText>(R.id.etName)
+        etTask.findViewById<EditText>(R.id.etName)
         etDescription.findViewById<EditText>(R.id.etDescription)
+        btnback.findViewById<EditText>(R.id.imgBtnBack1)
         btnSave.findViewById<Button>(R.id.btnSave).setOnClickListener {
-            // call AddTask()
+
+            val task = etTask.text.toString()
+            val description = etDescription.text.toString()
+
+            if (task.isNotEmpty() && description.isNotEmpty()) {
+                TaskModel.addTask(Tasks(0, task, description, " "))
+            }else{
+                Toast.makeText(requireContext(), "the fields are empty", Toast.LENGTH_SHORT).show()
+            }
         }
+
+        btnback.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_addTaskFragment_to_homeFragment)
+        }
+
         return view
     }
 }

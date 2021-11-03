@@ -21,10 +21,18 @@
         android:id="@+id/addTaskFragment"
         android:name="com.example.tasktimerapp.AddTaskFragment"
         android:label="fragment_add_task"
-        tools:layout="@layout/fragment_add_task" />
+        tools:layout="@layout/fragment_add_task" >
+        <action
+            android:id="@+id/action_addTaskFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewTaskFragment"
         android:name="com.example.tasktimerapp.ViewTaskFragment"
         android:label="fragment_view_task"
-        tools:layout="@layout/fragment_view_task" />
+        tools:layout="@layout/fragment_view_task" >
+        <action
+            android:id="@+id/action_viewTaskFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

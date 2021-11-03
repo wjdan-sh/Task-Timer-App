@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,7 +17,10 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class ViewTaskFragment : Fragment() {
+    private val TaskModel by lazy { ViewModelProvider(this).get( TaskViewModel ::class.java) }
+
     lateinit var rvTasks: RecyclerView
+    private lateinit var Rvadapter: RVAdapter
     lateinit var taskList: ArrayList<String>
     lateinit var imgBtnBack: ImageButton
 
@@ -23,18 +28,27 @@ class ViewTaskFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_view_task, container, false)
-        rvTasks.findViewById<RecyclerView>(R.id.rvTasks)
+
         taskList = arrayListOf()
         imgBtnBack.findViewById<ImageButton>(R.id.imgBtnBack)
-        // call viewAllTasks()
-        rvChange()
+        TaskModel.getTasks().observe(viewLifecycleOwner,{
+                notes -> Rvadapter.rvChange(notes)
+        })
+
+        rvTasks.findViewById<RecyclerView>(R.id.rvTasks)
+        Rvadapter = RVAdapter(this)
+        rvTasks.adapter = Rvadapter
+        rvTasks.layoutManager = LinearLayoutManager(requireContext())
+
+        imgBtnBack.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_viewTaskFragment_to_homeFragment)
+        }
+
         return view
     }
-    fun rvChange(){
-        //taskList = TasksDatabase.getInstance(requireContext()).NotesDao().getAllNotesInfo()
-        rvTasks.adapter = RVtasks(requireContext() as MainActivity, taskList)
-        rvTasks.layoutManager = LinearLayoutManager(requireContext())
-    }
+
+
+
 }

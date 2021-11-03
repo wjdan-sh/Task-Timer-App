@@ -3,17 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/drawable/back_icon.xml" value="0.2703125" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/drawable/background.xml" value="0.2703125" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/drawable/shape_button.xml" value="0.2703125" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/drawable/shape_button_back.xml" value="0.2703125" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/drawable/shape_buttons.xml" value="0.2703125" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/layout/fragment_add_task.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/layout/fragment_view_task.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/nadod/AndroidStudioProjects/Task-Timer-App/app/src/main/res/layout/item_task.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/drawable/gradient_bg.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/fragment_add_task.xml" value="0.2755208333333333" />
       </map>
     </option>
   </component>

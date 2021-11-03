@@ -12,4 +12,7 @@ interface TasksDao {
     @Insert
     fun insertTask(task: Tasks)
 
+    @Update
+    fun updateTask(task: Tasks)
+
 }

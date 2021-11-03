@@ -28,6 +28,10 @@ class TaskViewModel (applicationContext: Application) : AndroidViewModel(applica
         }
     }
 
-
+    fun updateTask(TaskID: Int, Task: String,Description:String,Time:String){
+        CoroutineScope(Dispatchers.IO).launch {
+            repo.updateTask(Tasks(TaskID, Task,Description,Time))
+        }
+    }
 
 }

@@ -8,8 +8,12 @@ class TasksRepo (private val tasksDao: TasksDao) {
 
     val Tasks: LiveData<List<Tasks>> = tasksDao.getAllTasks()
 
-    fun addTask(note: Tasks){
-        tasksDao.insertTask(note)
+    fun addTask(task: Tasks){
+        tasksDao.insertTask(task)
+    }
+
+    fun updateTask(task: Tasks){
+        tasksDao.updateTask(task)
     }
 
 }
