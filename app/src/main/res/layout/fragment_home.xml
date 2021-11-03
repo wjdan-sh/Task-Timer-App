@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/shape_buttons"
         android:textColor="#86A699"
@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/btnView"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
         android:background="@drawable/shape_buttons"
         android:textColor="#86A699"
         android:padding="5dp"
