@@ -35,8 +35,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:text="Task"
                     android:textAlignment="center"
-                    android:textColor="@color/greenOur" />
+                    android:textColor="@color/grn"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvDescription"
@@ -44,7 +46,8 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:textAlignment="center"
-                    android:textColor="#959494" />
+                    android:text="desciption"
+                    android:textColor="@color/greenOur" />
             </LinearLayout>
 
             <TextView
@@ -55,6 +58,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="00:00:00"
+                android:background="@color/lighterGreen"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -37,9 +37,14 @@ class AddTaskFragment : Fragment() {
 
             if (task.isNotEmpty() && description.isNotEmpty()) {
                 TaskModel.addTask(Tasks(0, task, description, " "))
+                Toast.makeText(requireContext(), "data saved successfully!", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(requireContext(), "the fields are empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "one or two fields are empty", Toast.LENGTH_SHORT).show()
             }
+                etTask.text.clear()
+                etTask.clearFocus()
+                etDescription.text.clear()
+                etDescription.clearFocus()
         }
 
         btnback.setOnClickListener {

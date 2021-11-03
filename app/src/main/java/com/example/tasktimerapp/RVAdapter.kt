@@ -13,12 +13,12 @@ import kotlinx.android.synthetic.main.item_task.view.*
 
 class RVAdapter (private val Fragment: ViewTaskFragment): RecyclerView.Adapter<RVAdapter.MessageViewHolder>() {
     private var taskList: List<Tasks> = listOf()
-    var Timer = Timer()
-    private val mInterval = Constants.TIMER_INTERVAL
-    private var mHandler: Handler? = null
-
-    private var timeInSeconds = 0L
-    private var startButtonClicked = false
+//    var Timer = Timer()
+//    private val mInterval = Constants.TIMER_INTERVAL
+//    private var mHandler: Handler? = null
+//
+//    private var timeInSeconds = 0L
+//    private var startButtonClicked = false
 
 
 
@@ -42,11 +42,7 @@ class RVAdapter (private val Fragment: ViewTaskFragment): RecyclerView.Adapter<R
             tvDescription.text = aTask.description
             time.setOnClickListener {
                 // call Function Time()
-                startOrStopButtonClicked()
             }
-
-
-//
 
         }
     }
