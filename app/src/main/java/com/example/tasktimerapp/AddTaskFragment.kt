@@ -26,10 +26,11 @@ class AddTaskFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_task, container, false)
-        etTask.findViewById<EditText>(R.id.etName)
-        etDescription.findViewById<EditText>(R.id.etDescription)
-        btnback.findViewById<EditText>(R.id.imgBtnBack1)
-        btnSave.findViewById<Button>(R.id.btnSave).setOnClickListener {
+        etTask = view.findViewById(R.id.etName)
+        etDescription = view.findViewById<EditText>(R.id.etDescription)
+        btnback = view.findViewById(R.id.imgBtnBack1)
+        btnSave = view.findViewById(R.id.btnSave)
+            btnSave.setOnClickListener {
 
             val task = etTask.text.toString()
             val description = etDescription.text.toString()

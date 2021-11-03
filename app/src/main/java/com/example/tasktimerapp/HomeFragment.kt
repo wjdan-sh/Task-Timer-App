@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 
 
 class HomeFragment : Fragment() {
-    lateinit var btnAdd: Button
+    lateinit var btnAdd : Button
     lateinit var btnView: Button
 
     override fun onCreateView(
@@ -20,10 +20,12 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        btnAdd.findViewById<Button>(R.id.btnAdd).setOnClickListener {
+           btnAdd = view.findViewById(R.id.btnAdd)
+        btnAdd.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_addTaskFragment)
         }
-        btnView.findViewById<Button>(R.id.btnView).setOnClickListener {
+        btnView = view.findViewById(R.id.btnView)
+            btnView.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_viewTaskFragment)
         }
         return view
