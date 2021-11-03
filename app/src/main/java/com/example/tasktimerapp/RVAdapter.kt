@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_task.view.*
 
-class RVAdapter (private val Fragment: ViewTaskFragment,context: Context): RecyclerView.Adapter<RVAdapter.MessageViewHolder>() {
+class RVAdapter (private val Fragment: ViewTaskFragment ): RecyclerView.Adapter<RVAdapter.MessageViewHolder>() {
     private var taskList: List<Tasks> = listOf()
     var Timer = Timer()
     private val mInterval = Constants.TIMER_INTERVAL
@@ -37,11 +37,10 @@ class RVAdapter (private val Fragment: ViewTaskFragment,context: Context): Recyc
 
     override fun onBindViewHolder(holder: RVAdapter.MessageViewHolder, position: Int) {
         val aTask = taskList[position]
-        var id = aTask.id
 
         holder.itemView.apply {
             tvTitle.text = aTask.task
-            var timee = aTask.time
+            var timee = " "
             tvDescription.text = aTask.description
             fun updateStopWatchView(timeInSeconds: Long) {
                 val formattedTime = Utility.getFormattedStopWatch((timeInSeconds * 1000))
@@ -63,21 +62,26 @@ class RVAdapter (private val Fragment: ViewTaskFragment,context: Context): Recyc
                 if (!startButtonClicked) {
                     mHandler = Handler(Looper.getMainLooper())
                     mStatusChecker.run()
-//                    startButtonClicked = !startButtonClicked
+                    startButtonClicked = !startButtonClicked
+
                 } else {
                     mHandler?.removeCallbacks(mStatusChecker)
-//                    startButtonClicked = !startButtonClicked
+                     startButtonClicked = !startButtonClicked
                     timee = time.text.toString()
                     time.text = timee
                     timeInSeconds = 0L
+
+                    Fragment.updateTaskTime(aTask,timee)
                 }
             }
 
             time.setOnClickListener {
-                // call Function Tim(
 
-                startButtonClicked = !startButtonClicked
                 startOrStopButtonClicked()
+
+            }
+            delete.setOnClickListener {
+                Fragment.deleteTask(aTask)
             }
 
         }

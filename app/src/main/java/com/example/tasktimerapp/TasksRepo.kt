@@ -16,4 +16,8 @@ class TasksRepo (private val tasksDao: TasksDao) {
         tasksDao.updateTask(task)
     }
 
+    fun deleteTask(task: Tasks){
+        tasksDao.deleteTask(task)
+    }
+
 }

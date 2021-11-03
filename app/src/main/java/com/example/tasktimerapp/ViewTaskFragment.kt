@@ -1,5 +1,7 @@
 package com.example.tasktimerapp
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,6 +52,32 @@ class ViewTaskFragment : Fragment() {
         return view
     }
 
+    fun updateTaskTime(Task :Tasks, time:String){
+        TaskModel.updateTask(Task.id,Task.task,Task.description,time)
+    }
+
+    fun deleteTask(Task :Tasks){
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+        dialogBuilder
+            .setCancelable(false)
+            .setPositiveButton("yes", DialogInterface.OnClickListener {
+
+                    dialog, id -> TaskModel.deleteTask(Task)
+
+            })
+            .setNegativeButton("No", DialogInterface.OnClickListener {
+
+                    dialog, id -> dialog.cancel()
+
+            })
+
+        val alert = dialogBuilder.create()
+        alert.setTitle("Are you sure want to delete?")
+        alert.show()
+
+    }
+    }
 
 
-}
+
+

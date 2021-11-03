@@ -17,16 +17,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_weight="40"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/delete"
+                    android:layout_width="15dp"
+                    android:layout_height="19dp"
+                    android:layout_margin="5dp"
+                    app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -34,7 +50,7 @@
                     android:id="@+id/tvTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:padding="4dp"
                     android:text="Task"
                     android:textAlignment="center"
                     android:textColor="@color/grn"
@@ -45,8 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:textAlignment="center"
                     android:text="desciption"
+                    android:textAlignment="center"
                     android:textColor="@color/greenOur" />
             </LinearLayout>
 
