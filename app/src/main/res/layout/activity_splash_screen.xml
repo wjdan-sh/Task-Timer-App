@@ -11,7 +11,7 @@
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_weight="0"
-        android:src="@drawable/kkk"
+        android:src="@drawable/tasktimecopy"
         android:layout_height="wrap_content" />
 
     <TextView
