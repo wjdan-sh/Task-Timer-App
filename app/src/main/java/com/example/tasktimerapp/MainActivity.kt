@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navController = Navigation.findNavController(this, R.id.Frmain)
-    }
+        //navController = Navigation.findNavController(this, R.id.Frmain)
+    }}
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
-    }
-}
+//    override fun onSupportNavigateUp(): Boolean {
+//    //    return navController.navigateUp()
+//
+//}

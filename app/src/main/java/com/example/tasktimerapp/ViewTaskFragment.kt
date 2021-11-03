@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,15 +33,15 @@ class ViewTaskFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_view_task, container, false)
 
         taskList = arrayListOf()
-        imgBtnBack.findViewById<ImageButton>(R.id.imgBtnBack)
+        imgBtnBack= view.findViewById(R.id.imgBtnBack)
         TaskModel.getTasks().observe(viewLifecycleOwner,{
                 notes -> Rvadapter.rvChange(notes)
         })
 
-        rvTasks.findViewById<RecyclerView>(R.id.rvTasks)
+        rvTasks = view.findViewById(R.id.rvTasks)
         Rvadapter = RVAdapter(this)
         rvTasks.adapter = Rvadapter
-        rvTasks.layoutManager = LinearLayoutManager(requireContext())
+        rvTasks.layoutManager = GridLayoutManager(requireContext(),2)
 
         imgBtnBack.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_viewTaskFragment_to_homeFragment)
