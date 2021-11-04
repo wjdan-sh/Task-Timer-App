@@ -1,10 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    
+    <style name="MyTitleTextAppearance" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/grn</item>
+    </style>
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MyTitleTextAppearance</item>
+    </style>
     <style name="Theme.TaskTimerApp" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/babyPink</item>
         <item name="colorPrimaryVariant">@color/greenOur</item>
         <item name="colorOnPrimary">@color/grn</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/grn</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
