@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_weight="0"
         android:src="@drawable/tasktimecopy"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -20,17 +21,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Welcome to Task App"
+        android:layout_marginBottom="16dp"
         android:textAlignment="center"
         android:textSize="24sp" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:gravity="center"-->
-<!--        android:text="By Ramia Aloufi"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="16sp" />-->
 
     <ProgressBar
         android:id="@+id/progressBar"

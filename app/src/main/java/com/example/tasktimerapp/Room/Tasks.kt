@@ -1,4 +1,4 @@
-package com.example.tasktimerapp
+package com.example.tasktimerapp.Room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

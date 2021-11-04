@@ -8,6 +8,17 @@
     android:background="@drawable/background"
     tools:context=".HomeFragment">
 
+    <TextView
+        android:id="@+id/tvInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="100dp"
+        android:textColor="@color/toti"
+        android:text="How to Start?" />
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="200dp"

@@ -11,13 +11,8 @@ import android.widget.ImageButton
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.tasktimerapp.Room.Tasks
 
 class ViewTaskFragment : Fragment() {
     private val TaskModel by lazy { ViewModelProvider(this).get( TaskViewModel ::class.java) }
@@ -52,11 +47,11 @@ class ViewTaskFragment : Fragment() {
         return view
     }
 
-    fun updateTaskTime(Task :Tasks, time:String){
+    fun updateTaskTime(Task : Tasks, time:String){
         TaskModel.updateTask(Task.id,Task.task,Task.description,time)
     }
 
-    fun deleteTask(Task :Tasks){
+    fun deleteTask(Task : Tasks){
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder
             .setCancelable(false)

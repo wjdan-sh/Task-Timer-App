@@ -3,13 +3,16 @@ package com.example.tasktimerapp
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.example.tasktimerapp.Room.Tasks
+import com.example.tasktimerapp.TasksDatabase
+import com.example.tasktimerapp.Room.TasksRepo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class TaskViewModel (applicationContext: Application) : AndroidViewModel(applicationContext) {
 
-    private val repo:TasksRepo
+    private val repo: TasksRepo
     private val tasks : LiveData<List<Tasks>>
 
     init {

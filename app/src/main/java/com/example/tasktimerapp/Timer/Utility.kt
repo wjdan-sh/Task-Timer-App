@@ -1,4 +1,4 @@
-package com.example.tasktimerapp
+package com.example.tasktimerapp.Timer
 
 import java.util.concurrent.TimeUnit
 
