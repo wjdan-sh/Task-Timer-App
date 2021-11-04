@@ -36,7 +36,7 @@ class AddTaskFragment : Fragment() {
             val description = etDescription.text.toString()
 
             if (task.isNotEmpty() && description.isNotEmpty()) {
-                TaskModel.addTask(Tasks(0, task, description, " "))
+                TaskModel.addTask(Tasks(0, task, description, "00:00:00"))
                 Toast.makeText(requireContext(), "data saved successfully!", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(requireContext(), "one or two fields are empty", Toast.LENGTH_SHORT).show()
